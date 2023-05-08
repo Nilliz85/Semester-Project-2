@@ -1,16 +1,15 @@
 # Javascript-2-CA
-Course Assignment for JavaScript 2
 
+Course Assignment for JavaScript 2
 
 ## Course assignment
 
-   - Goal
-   - API
-   - Brief
-   - Development process
-   - Restrictions
-   - Resources
-    
+- Goal
+- API
+- Brief
+- Development process
+- Restrictions
+- Resources
 
 ## Goal
 
@@ -66,7 +65,7 @@ Development process
     Create or select one repository to use throughout this project.
     Create a js2 branch from the default master or main branch.
 
-    You may use either Trello or GitHub Projects to manage your development tasks. 
+    You may use either Trello or GitHub Projects to manage your development tasks.
     If you are using Trello, please make sure that your board is public and that a link is provided in your readme.md file.
     Make sure to detail tasks accurately and divide them evenly if working a group.
 
@@ -109,3 +108,6 @@ Development process
     A .gitignore file must be provided including node_modules. This folder must be untracked.
     Content posted on the API is public and associated with your identity. Be appropriate and respectful.
 
+## Trello board
+
+    https://trello.com/b/wlET3j0b/js2-ca
