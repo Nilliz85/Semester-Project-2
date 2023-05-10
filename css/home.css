@@ -1,0 +1,12 @@
+/*--------- Sign up, Sign in & About---------*/
+/*---------- Imports ----------*/
+@import "./_variables.css";
+
+/*--------- Body ---------*/
+body {
+  overflow: hidden;
+}
+
+.box-name {
+  color: var(--primary);
+}

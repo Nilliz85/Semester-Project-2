@@ -1,0 +1,34 @@
+/*---------- Imports ----------*/
+@import "./_variables.css";
+
+/*---------- Header ----------*/
+
+nav {
+  border-bottom: 3px solid;
+  border-image: linear-gradient(to right, #265e8a, #d2f2f4, #265e8a) 1;
+}
+
+.navbar-nav .nav-link {
+  color: black;
+}
+
+/*---------- Footer ----------*/
+footer {
+  background: linear-gradient(to top, #0f3151 0%, #265e8a 20%, #d2f2f4 80%, #fff 100%);
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  padding: 2rem 0;
+  color: #fff;
+  font-size: 1.6rem;
+}
+
+.footer-nav a,
+a:visited {
+  color: #fff;
+  text-decoration: none;
+}
