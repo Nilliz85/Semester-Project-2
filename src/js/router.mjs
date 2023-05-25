@@ -1,21 +1,21 @@
 import * as listeners from "./handlers/index.mjs";
 
 export default function router() {
-  const path = location.pathname;
+  const path = window.location.pathname;
 
   switch (path) {
     case "/profile/login/":
       listeners.setLoginFormListener();
-      break;
+      return;
     case "/profile/register/":
       listeners.setRegisterFormListener();
-      break;
+      return;
     case "/post/create/":
       listeners.setCreatePostFormListener();
-      break;
+      return;
     case "/post/edit/":
       listeners.setUpdatePostListener();
-      break;
+      return;
     case "/profile/edit/":
       listeners.setUpdateProfileListener();
       return;
