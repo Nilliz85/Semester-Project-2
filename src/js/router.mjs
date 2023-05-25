@@ -1,7 +1,7 @@
 import * as listeners from "./handlers/index.mjs";
 
 export default function router() {
-  const path = window.location.pathname;
+  const path = location.pathname;
 
   switch (path) {
     case "/profile/login/":
