@@ -12,15 +12,17 @@ if (path === "/profile/login/") {
   listeners.setCreatePostFormListener();
 } else if (path === "/post/edit/") {
   listeners.setUpdatePostListener();
+} else if (path === "/profile/edit/") {
+  listeners.setUpdateProfileListener();
 }
 
-async function testTemplate() {
-  const posts = await postMethods.getPosts();
-  const container = document.querySelector("#posts");
-  templates.renderPostTemplates(posts, container);
-}
+// async function testTemplate() {
+//   const posts = await postMethods.getPosts();
+//   const container = document.querySelector("#posts");
+//   templates.renderPostTemplates(posts, container);
+// }
 
-testTemplate();
+// testTemplate();
 
 // async function testTemplate() {
 //   const posts = await postMethods.getPosts();
