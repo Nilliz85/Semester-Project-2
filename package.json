@@ -5,7 +5,8 @@
   "scripts": {
     "build": "sass src/scss:dist/css",
     "watch": "sass --watch src/scss:dist/css & live-server",
-    "start": "npm run build && npm run watch"
+    "start": "npm run build && npm run watch",
+    "dev": "vite --entry index.html"
   },
   "repository": {
     "type": "git",
@@ -27,7 +28,8 @@
   "homepage": "https://github.com/Nilliz85/Javascript-2-CA",
   "devDependencies": {
     "live-server": "^1.2.2",
-    "sass": "^1.62.1"
+    "sass": "^1.62.1",
+    "vite": "^4.3.9"
   },
   "dependencies": {
     "bootstrap": "^5.2.3",
