@@ -1,6 +1,7 @@
 import * as listeners from "./handlers/index.mjs";
-import * as postMethods from "./api/posts/index.mjs";
 import * as templates from "./templates/index.mjs";
+import { loginRedirect } from "./api/helpers/auth.mjs";
+import { renderPostTemplate } from "../js/templates/post.mjs";
 
 export default function router() {
   const path = location.pathname;
@@ -12,40 +13,37 @@ export default function router() {
     case "/profile/register/":
       listeners.setRegisterFormListener();
       return;
-    case "/profile/edit/":
-      listeners.setUpdateProfileListener();
-      return;
     case "/post/create/":
       listeners.setCreatePostFormListener();
+      listeners.logoutListener();
       return;
     case "/post/edit/":
       listeners.setUpdatePostListener();
+      listeners.logoutListener();
       return;
-    case "/posts":
-      templates.testPostsTemplate();
+    case "/profile/edit/":
+      listeners.setUpdateProfileListener();
+      listeners.logoutListener();
+      return;
+    case "/post/index.html":
+      listeners.setUpdatePostListener();
+      listeners.removePostListener();
+      listeners.logoutListener();
+      break;
+    case "/posts/":
+      templates.renderPostTemplates();
+      listeners.logoutListener();
       return;
     case "/posts/post.html":
       templates.testPostTemplate();
+      listeners.logoutListener();
       return;
+    case "/profile/":
+      listeners.logoutListener();
+      break;
     default:
       break;
   }
+
+  loginRedirect(path);
 }
-
-async function testPostsTemplate() {
-  const posts = await postMethods.getPosts();
-  const container = document.querySelector("#posts");
-  templates.renderPostTemplates(posts, container);
-  console.log(posts);
-}
-
-testPostsTemplate();
-
-async function testPostTemplate() {
-  const posts = await postMethods.getPosts();
-  const post = posts[54];
-  const container = document.querySelector("#post");
-  templates.renderPostTemplate(post, container);
-}
-
-testPostTemplate();

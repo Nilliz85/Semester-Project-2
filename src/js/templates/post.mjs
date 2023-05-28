@@ -1,21 +1,28 @@
 export function postTemplate(postData) {
   const post = document.createElement("div");
   post.classList.add("post");
-  post.innerText = postData.title;
+
+  const title = document.createElement("h2");
+  title.innerText = postData.title;
+  post.appendChild(title);
 
   if (postData.media) {
     const img = document.createElement("img");
     img.src = postData.media;
     img.alt = `Image from ${postData.title}`;
-    post.append(img);
+    post.appendChild(img);
   }
+
+  const body = document.createElement("p");
+  body.innerText = postData.body;
+  post.appendChild(body);
+
   return post;
 }
 
 export function renderPostTemplate(postData, parent) {
-  parent.append(postTemplate(postData));
-}
-
-export function renderPostTemplates(postDataList, parent) {
-  parent.append(...postDataList.map(postTemplate));
+  const postContainer = document.getElementById(parent);
+  const postElement = postTemplate(postData);
+  postContainer.innerHTML = "";
+  postContainer.appendChild(postElement);
 }
