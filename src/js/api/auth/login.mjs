@@ -16,10 +16,14 @@ export async function login(profile) {
     body,
   });
 
-  const json = await response.json();
+  const { accessToken, ...user } = await response.json();
+
+  storage.save("token", accessToken);
+  storage.save("profile", user);
 
   if (!response.ok) {
-    throw new Error(json.errors[0].message);
+    alert("Password or Username is wrong");
+    throw new Error("Password or Username is wrong");
   }
-  return json;
+  location.href = "/posts";
 }

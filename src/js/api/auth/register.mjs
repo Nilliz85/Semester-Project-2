@@ -16,6 +16,7 @@ export async function register(profile) {
   });
 
   const result = await response.json();
-  alert("You registered successfully!");
+  alert("You are registered succesfully");
+  location.href = "/login/";
   return result;
 }

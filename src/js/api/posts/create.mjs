@@ -1,5 +1,4 @@
 import { API_SOCIAL_URL } from "../constants.mjs";
-
 import { authFetch } from "../authFetch.mjs";
 
 const action = "/posts";
@@ -12,6 +11,10 @@ export async function createPost(postData) {
     method,
     body: JSON.stringify(postData),
   });
+  if (response.ok) {
+    alert("Success");
+    location.href = "/posts";
+  }
 
   return await response.json();
 }
