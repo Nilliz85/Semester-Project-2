@@ -1,0 +1,149 @@
+/*-------------------- Color Variables --------------------*/
+
+:root {
+	--primary: #521262;
+	--secondary: #761a8d;
+	--dark: #260a37;
+	--white: #fff;
+	--white2: #e6e6e6;
+	--black: #0d0d0d;
+	--grey1: #ccc;
+	--grey2: #828282;
+	--grey3: #333;
+	--orange: #ffa238;
+	--pink: #9a2268;
+}
+
+/*-------------------- Container classes (and some general styling) --------------------*/
+html {
+	box-sizing: border-box;
+	font-size: 62.5%;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	font-size: 1.6rem;
+	background-color: var(--white);
+	color: var(--grey3);
+	font-weight: 400;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+}
+
+.display-flex {
+	display: flex;
+	align-items: center;
+}
+
+a,
+a:visited {
+	color: var(--grey3);
+}
+
+/* Typography */
+body {
+	font-family: Arial, sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
+}
+
+/* ---------------Navbar------------- */
+
+.header {
+	background-color: var(--white);
+	height: 8rem;
+	line-height: 7.5rem;
+	box-shadow: 0 5px 10px var(--grey1);
+	z-index: 100;
+}
+
+.header.fix {
+	position: fixed;
+	width: 100%;
+	left: 0;
+	top: 0;
+	box-shadow: 0 5px 10px var(--grey1);
+}
+
+/* Navigation Menu */
+.navigation {
+	justify-content: space-between;
+	margin-left: 10%;
+	margin-right: 10%;
+	height: 100%;
+}
+
+/*--- Logo ---*/
+.logo {
+	display: flex;
+	align-items: center;
+}
+
+.logo img {
+	height: 7rem;
+}
+
+/*--- Hamburger menu ---*/
+.hamburger-menu {
+	margin-right: 5rem;
+	/* display: none; */
+}
+
+/*--- nav-list ---*/
+.nav-list li:not(:last-child) {
+	margin-right: 2rem;
+}
+
+.nav-list {
+	list-style: none;
+}
+
+.nav-list li a {
+	display: inline-block;
+	font-size: 2rem;
+	padding: 0.5rem 1rem;
+	font-weight: 500;
+	transition: color 500ms ease-in-out;
+	text-decoration: none;
+}
+
+.nav-list li a.active {
+	text-decoration: underline;
+}
+
+.nav-list li a:hover {
+	color: var(--pink);
+}
+
+/* ---------------Layout------------- */
+.user-guide {
+	padding: 20px;
+}
+
+.user-guide__container {
+	display: flex;
+	justify-content: space-between;
+	gap: 20px;
+}
+
+.user-guide__item {
+	flex: 1;
+	padding: 10px;
+	background-color: #fff;
+	border: 1px solid var(--grey1);
+	border-radius: 5px;
+	box-shadow: 10px 8px 10px 5px rgba(204, 204, 204, 0.7);
+	text-align: center;
+}
+
+.user-guide__header {
+	font-size: 26px;
+}
+
+.user-guide__subtext {
+	font-size: 12px;
+}
