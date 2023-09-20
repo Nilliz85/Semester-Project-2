@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--- Title --->
+    <title>Nordsphere | Edit Post</title>
+    <!--- Metadata --->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="This is an assignment for a class in my frontend developer course on Noroff" />
+    <meta name="keywords" content="web design, graphic design, UI/UX design, school assignment, social media, Noroff" />
+    <!--- favicon --->
+    <link rel="shortcut icon" type="image/png" href="./assets/favicon/world_favicon.png" />
+    <!--- JS modules --->
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script type="module" src="/src/js/index.mjs" defer></script>
+    <script type="module" src="/src/js/handlers/register.mjs" defer></script>
+    <!--- Links --->
+    <link rel="stylesheet" href="../../dist/css/index.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand text-primary" href="./feed/index.html">Nordsphere</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="vh-100">
+        <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+          <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+              <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                <!-- form  -->
+
+                <form id="editPost">
+                  <div class="form-outline mb-4">
+                    <label for="">Title</label>
+                    <input class="form-control" type="text" name="title" required maxlength="100" />
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <label for="">Body</label>
+                    <textarea class="form-control" name="body" rows="8" required></textarea>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <label for="">Media</label>
+                    <input class="form-control" type="url" name="media" />
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <label for="">Tags</label>
+                    <input class="form-control" type="text" name="tags" />
+                  </div>
+
+                  <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Update Post</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="text-center text-white fixed-bottom">
+      <div class="container p-5"></div>
+      <div class="text-center p-5">
+        <ul class="footer-nav">
+          <li><a href="./feed/index.html">Home</a></li>
+          <li><a href="./about/index.html">About</a></li>
+          <li><a href="https://www.noroff.no/en">Noroff</a></li>
+        </ul>
+        <p>&copy; 2023 Nordsphere. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
