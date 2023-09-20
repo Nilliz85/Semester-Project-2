@@ -1,36 +1,37 @@
 {
-  "name": "javascript-2-ca",
-  "version": "0.0.1",
-  "description": "A starting point for the Javascript-2-Course Assignment",
-  "scripts": {
-    "build": "sass src/scss:dist/css",
-    "watch": "sass --watch src/scss:dist/css & live-server",
-    "start": "npm run build && npm run watch"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Nilliz85/Javascript-2-CA.git"
-  },
-  "keywords": [
-    "CSS",
-    "CSS",
-    "Frameworks",
-    "Bootstrap",
-    "SCSS",
-    "SASS"
-  ],
-  "author": "Per Edward Nilsen <contact@pernilsen.dev>",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Nilliz85/Javascript-2-CA/issues"
-  },
-  "homepage": "https://github.com/Nilliz85/Javascript-2-CA",
-  "devDependencies": {
-    "live-server": "^1.2.2",
-    "sass": "^1.62.1"
-  },
-  "dependencies": {
-    "bootstrap": "^5.2.3",
-    "bootstrap-icons": "^1.10.3"
-  }
+	"name": "semester-project-2-ca",
+	"version": "0.0.1",
+	"description": "A starting point for the Semester-Project-2 Course Assignment",
+	"scripts": {
+		"build": "sass src/scss:dist/css",
+		"watch": "sass --watch src/scss:dist/css & live-server",
+		"start": "npm run build && npm run watch"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Nilliz85/Semester-Project-2.git"
+	},
+	"keywords": [
+		"CSS",
+		"CSS",
+		"Frameworks",
+		"Bootstrap",
+		"SCSS",
+		"SASS"
+	],
+	"author": "Per Edward Nilsen <contact@pernilsen.dev>",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Nilliz85/Semester-Project-2/issues"
+	},
+	"homepage": "https://github.com/Nilliz85/Semester-Project-2",
+	"devDependencies": {
+		"chokidar": "^3.5.3",
+		"live-server": "^1.2.2",
+		"sass": "^1.67.0"
+	},
+	"dependencies": {
+		"bootstrap": "^5.3.2",
+		"bootstrap-icons": "^1.11.1"
+	}
 }
