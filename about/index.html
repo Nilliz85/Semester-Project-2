@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<!--- Title --->
-		<title>Auctionet | Welcome</title>
+		<title>Auctionet | About</title>
 		<!--- Metadata --->
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -11,19 +11,15 @@
 		<meta name="keywords" content="web design, graphic design, UI/UX design, school assignment, social media, Noroff" />
 		<!--- favicon --->
 		<link rel="shortcut icon" type="image/png" href="./assets/favicon/world_favicon.png" />
-		<!--- JS modules --->
-		<script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
-		<script type="module" src="/src/js/index.mjs" defer></script>
-		<script type="module" src="/src/js/handlers/register.mjs" defer></script>
 		<!--- Links --->
 		<link rel="stylesheet" href="../../dist/css/index.css" />
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />
 	</head>
-	<body class="landing-page">
+	<body class="about-page">
 		<header>
 			<nav class="navbar navbar-expand-lg">
 				<div class="container-fluid">
-					<a class="navbar-brand text-primary" href="#">Auctionet</a>
+					<a class="navbar-brand text-primary" href="./home.html">Auctionet</a>
 				</div>
 			</nav>
 		</header>
@@ -36,19 +32,21 @@
 							<div class="col-12 col-md-9 col-lg-7 col-xl-6">
 								<div class="card" style="border-radius: 15px">
 									<div class="card-body p-5">
-										<h2 class="text-uppercase text-center mb-5 box-name">Welcome to Auctionet</h2>
+										<h2 class="text-uppercase text-center mb-5">About</h2>
+										<p>
+											Welcome to my online auction platform! This was developed as part of my front-end development studies at Noroff School of Technology and Digital Media. The project's purpose was
+											to utilize JavaScript techniques to build a front-end for an auction application using an API provided by Noroff.
+										</p>
 
-										<div id="landingpage-container">
-											<div class="d-flex justify-content-center">
-												<form action="./profile/register/index.html">
-													<button class="btn btn-success btn-block btn-lg gradient-custom-4 text-body m-2" type="submit">Register</button>
-												</form>
+										<p>
+											This platform is for users with @noroff.no or @stud.noroff.no email addresses. After registration and profile creation, users can log in to access features like listing items for
+											auction, bidding on items, and viewing auction history.
+										</p>
 
-												<form action="./profile/login/">
-													<button class="btn btn-success btn-block btn-lg gradient-custom-4 text-body m-2" type="submit">Login</button>
-												</form>
-											</div>
-										</div>
+										<p>
+											In addition to the mandatory features, there are optional functionalities like adding comments to listings, setting reserve prices, and following other users. The aim was to
+											build a functional yet appealing auction platform that demonstrates both the required and optional features effectively. Enjoy your experience on the platform!
+										</p>
 									</div>
 								</div>
 							</div>
@@ -57,16 +55,21 @@
 				</div>
 			</section>
 		</main>
+
 		<footer class="text-center text-white fixed-bottom">
+			<!-- Grid container -->
 			<div class="container p-5"></div>
+			<!-- Grid container -->
+			<!-- Copyright -->
 			<div class="text-center p-5">
 				<ul class="footer-nav">
-					<li><a href="./feed/index.html">Home</a></li>
-					<li><a href="./about/index.html">About</a></li>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="./about.html">About</a></li>
 					<li><a href="https://www.noroff.no/en">Noroff</a></li>
 				</ul>
 				<p>&copy; 2023 Auctionet. All rights reserved.</p>
 			</div>
 		</footer>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 	</body>
 </html>

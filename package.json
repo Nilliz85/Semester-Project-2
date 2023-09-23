@@ -1,18 +1,37 @@
 {
-	"name": "semester-project-2",
+	"name": "semester-project-2-ca",
 	"version": "0.0.1",
-	"description": "the semester project 2 assignment for the noroff FED22 frontend course",
-	"main": "index.js",
+	"description": "first draft for the Semester-Project-2 Course Assignment",
 	"scripts": {
-		"test": "test"
+		"build": "sass src/scss:dist/css",
+		"watch": "sass --watch src/scss:dist/css & live-server",
+		"start": "npm run build && npm run watch"
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/Nilliz85/Semester-Project-2"
+		"url": "git+https://github.com/Nilliz85/Semester-Project-2.git"
 	},
-	"author": "Per Edward Nilsen",
+	"keywords": [
+		"CSS",
+		"CSS",
+		"Frameworks",
+		"Bootstrap",
+		"SCSS",
+		"SASS"
+	],
+	"author": "Per Edward Nilsen <contact@pernilsen.dev>",
 	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Nilliz85/Semester-Project-2/issues"
+	},
+	"homepage": "https://github.com/Nilliz85/Semester-Project-2",
 	"devDependencies": {
-		"prettier": "^3.0.3"
+		"chokidar": "^3.5.3",
+		"live-server": "^1.2.2",
+		"sass": "^1.67.0"
+	},
+	"dependencies": {
+		"bootstrap": "^5.3.2",
+		"bootstrap-icons": "^1.11.1"
 	}
 }
