@@ -1,28 +1,66 @@
-export function listingTemplate(listingData) {
-	const listing = document.createElement('div');
-	listing.classList.add('listing');
+/**
+ * Handles the creation and rendering of a single listing template.
+ * @param {Object} listingData - The data of the listing.
+ * @param {string} listingData.title - The title of the listing.
+ * @param {string} listingData.body - The body content of the listing.
+ * @param {string} listingData.media - The URL of the listing's media (optional).
+ * @param {string[]} listingData.tags - The tags associated with the listing (optional).
+ * @param {HTMLElement} parent - The parent element to which the listing template is appended.
+ * @returns {HTMLElement} The generated and appended listing HTML element.
+ */
 
-	const title = document.createElement('h2');
-	title.innerText = listingData.title;
-	listing.appendChild(title);
+export function listingTemplateC(listingData) {
+	const listing = document.createElement('div');
+	listing.classList.add('col-md-4');
+	listing.classList.add('listing');
+	listing.classList.add('border');
+	listing.classList.add('w-25');
+	listing.classList.add('mh-25');
+	listing.classList.add('m-4');
+	listing.innerText = listingData.title;
+
+	const listingBody = document.createElement('p');
+	listingBody.innerText = listingData.description;
+	listing.append(listingBody);
 
 	if (listingData.media) {
 		const img = document.createElement('img');
 		img.src = listingData.media;
 		img.alt = `Image from ${listingData.title}`;
-		listing.appendChild(img);
+		img.classList.add('mt-5');
+		img.classList.add('img-fluid');
+		listing.append(img);
 	}
 
-	const body = document.createElement('p');
-	body.innerText = listingData.body;
-	listing.appendChild(body);
+	if (listingData.tags.length > 0) {
+		const tags = document.createElement('div');
+		tags.classList.add('tags');
+		tags.classList.add('d-flex');
+		tags.innerHTML = "<p class= 'pe-2'>Tags: </p>";
+		listingData.tags.forEach((tag) => {
+			const tagElement = document.createElement('p');
+			tagElement.classList.add('tag');
+			tagElement.innerText = `${tag}, `;
+			tagElement.classList.add('pe-2');
+			tags.append(tagElement);
+		});
+		listing.append(tags);
+	}
 
+	const listingBids = document.createElement('div');
+	listingData.bids.forEach((bid) => {
+		const bidElement = document.createElement('div');
+		const bidText = document.createElement('p');
+		bidText.innerHTML = `Bid: ${bid.amount} `;
+		bidText.innerHTML += `Bidder: ${bid.bidderName}`;
+		bidElement.append(bidText);
+		listingBids.append(bidElement);
+	});
+	listing.append(listingBids);
 	return listing;
 }
 
-export function renderListingTemplate(listingData, parent) {
-	const listingContainer = document.getElementById(parent);
-	const listingElement = listingTemplate(listingData);
-	listingContainer.innerHTML = '';
-	listingContainer.appendChild(listingElement);
+export function renderOneListingTemplate(listingData, parent) {
+	parent.append(listingTemplateC(listingData));
+	console.log(listingData, parent);
 }

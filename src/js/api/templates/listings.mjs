@@ -1,39 +1,64 @@
-import * as listingMethods from '../api/listings/index.mjs';
+/**
+ * Create and render an HTML template for a single listing, then append it to a specified parent element.
+ * @param {Object} listingData - The data of the listing.
+ * @param {string} listingData.title - The title of the listing.
+ * @param {string} listingData.body - The body content of the listing.
+ * @param {string} listingData.media - The URL of the listing's media (optional).
+ * @param {string[]} listingData.tags - The tags associated with the listing (optional).
+ * @param {HTMLElement} parent - The parent element to which the listing template is appended.
+ * @returns {HTMLElement} The generated and appended listing HTML element.
+ */
 
-export function listingsTemplate(listingData) {
-	const listings = document.createElement('div');
-	listings.classList.add('listings');
-
-	const createdDate = new Date(listingData.created);
-	const formattedDate = `${createdDate.getDate()}-${createdDate.getMonth() + 1}-${createdDate.getFullYear()} ${createdDate.getHours()}:${createdDate.getMinutes()}`;
-
-	listings.innerHTML = `<div class="card">
-  <a href="/listing/index.html?id=${listingData.id}" class="listing-title p-2 " id=${listingData.id}>${listingData.title} </a> 
-  <p class="listing-body p-2">${listingData.body}</p>
-  <div class="p-2" id="listingsId" value="${listingData.id}">#${listingData.id}</div>
- 
-  <p class="p-1 text-muted">posted: ${formattedDate}</p>
-  </div>`;
+export function listingTemplateB(listingData) {
+	const listingLink = document.createElement('a');
+	listingLink.href = `/listing/?id=${listingData.id}`;
+	const listing = document.createElement('div');
+	listingLink.append(listing);
+	listingLink.classList.add('col-md-4');
+	listingLink.classList.add('listing');
+	listingLink.classList.add('border');
+	listingLink.classList.add('w-25');
+	listingLink.classList.add('mh-25');
+	listingLink.classList.add('m-4');
+	listingLink.classList.add('text-decoration-none');
+	listingLink.classList.add('text-light');
+	const listingTitle = document.createElement('h2');
+	listingTitle.innerText = listingData.title;
+	listing.append(listingTitle);
+	const listingBody = document.createElement('p');
+	listingBody.innerText = listingData.description;
+	listing.append(listingBody);
 
 	if (listingData.media) {
 		const img = document.createElement('img');
-		img.classList.add('image-size');
 		img.src = listingData.media;
-		img.alt = `Image of ${listingData.title}`;
-		listings.append(img);
+		img.alt = `Image from ${listingData.title}`;
+		img.classList.add('mt-5');
+		img.classList.add('mb-2');
+		img.classList.add('img-fluid');
+		listing.append(img);
 	}
 
-	return listings;
+	if (listingData.tags.length > 0) {
+		const tags = document.createElement('div');
+		tags.classList.add('tags');
+		tags.classList.add('d-flex');
+		tags.innerHTML = "<p class= 'pe-2'>Tags: </p>";
+		listingData.tags.forEach((tag) => {
+			const tagElement = document.createElement('p');
+			tagElement.classList.add('tag');
+			tagElement.innerText = `${tag}, `;
+			tagElement.classList.add('pe-2');
+			tags.append(tagElement);
+		});
+		listing.append(tags);
+	}
+
+	return listingLink;
 }
 
 export function renderListingTemplates(listingDataList, parent) {
-	parent.append(...listingDataList.map(listingsTemplate));
+	parent.innerHTML = '';
+	parent.append(...listingDataList.map(listingTemplateB));
+	parent.classList.add('row');
 }
-
-async function templates() {
-	const listings = await listingMethods.getListings();
-	const container = document.getElementById('listings');
-	renderListingTemplates(listings, container);
-}
-
-templates();
