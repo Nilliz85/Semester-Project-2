@@ -10,7 +10,7 @@ hamburger.addEventListener('click', () => {
 	navList.classList.toggle('show');
 });
 
-/*-- Adds "position: fixed" on header when user scrolls--*/
+/*---------- Fix Nav ----------*/
 const navHeight = header.getBoundingClientRect().height;
 window.addEventListener('scroll', () => {
 	const scrollHeight = window.scrollY;
