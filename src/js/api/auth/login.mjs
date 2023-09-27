@@ -1,13 +1,18 @@
 import { API_AUCTION_URL } from '../constants.mjs';
-import * as storage from '../../storage/index.mjs';
 
 const action = '/auth/login';
 const method = 'post';
 
+/**
+ * Log in a user.
+ * @param {Object} profile - User profile object.
+ * @returns {Promise<Object>} Resolves to the login response.
+ * @throws {Error} If a login error occurs.
+ */
+
 export async function login(profile) {
 	const loginURL = API_AUCTION_URL + action;
 	const body = JSON.stringify(profile);
-
 	const response = await fetch(loginURL, {
 		headers: {
 			'Content-Type': 'application/json',
@@ -16,14 +21,9 @@ export async function login(profile) {
 		body,
 	});
 
-	const { accessToken, ...user } = await response.json();
-
-	storage.save('token', accessToken);
-	storage.save('profile', user);
-
-	if (!response.ok) {
-		alert('Password or Username is wrong');
-		throw new Error('Password or Username is wrong');
+	const json = await response.json();
+	if (response.ok) {
+		return json;
 	}
-	location.href = '/listings';
+	throw new Error(json.errors[0].message);
 }

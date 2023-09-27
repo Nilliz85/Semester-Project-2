@@ -1,25 +1,19 @@
 import { API_AUCTION_URL } from '../constants.mjs';
-
 import { authFetch } from '../authFetch.mjs';
-import { load } from '../../storage/index.mjs';
 
 const action = '/profiles';
 
-export async function getProfiles() {
-	const updateProfileURL = `${API_AUCTION_URL}${action}`;
-
-	const response = await authFetch(updateProfileURL);
-
-	return await response.json();
-}
+/**
+ * Retrieves a profile based on the provided name.
+ * @param {string} name - The name of the profile to retrieve.
+ * @returns {Promise<Object>} A Promise that resolves to the profile object with the specified name.
+ */
 
 export async function getProfile(name) {
 	if (!name) {
-		throw new Error('Get requires a profile name');
+		throw new Error('Get requires a name');
 	}
-	const getProfileURL = `${API_AUCTION_URL}${action}/${name}`;
-
+	const getProfileURL = `${API_AUCTION_URL}${action}/${name}?_listings=true`;
 	const response = await authFetch(getProfileURL);
-
 	return await response.json();
 }
