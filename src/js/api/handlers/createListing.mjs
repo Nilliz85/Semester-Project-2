@@ -1,34 +1,27 @@
-import { createListing } from '../api/listings/index.mjs';
+import { createListing } from '../listing/create.mjs';
 
-export function setCreateListingFormListener() {
+export function setCreateListingListener() {
 	const form = document.querySelector('#createListing');
 
+	/**
+	 * Set up a listener for form submission events on the provided HTML form element
+	 * and handle data transmission to the API when the form is submitted.
+	 * @param {HTMLFormElement} form - The form element to which the listener is attached.
+	 */
+
 	if (form) {
-		form.addEventListener('submit', async (event) => {
+		form.addEventListener('submit', (event) => {
 			event.preventDefault();
 			const form = event.target;
 			const formData = new FormData(form);
-
-			const title = formData.get('title');
-			const description = formData.get('description');
-			const deadline = formData.get('deadline');
-			const media = formData.get('media');
-
-			const listing = {
-				title: title,
-				description: description,
-				deadline: deadline,
-				media: media,
-			};
-
+			const listing = Object.fromEntries(formData.entries());
+			listing.description = [listing.description];
+			listing.tags = [listing.tags];
+			listing.media = [listing.media];
+			createListing(listing);
 			console.log(listing);
-
-			try {
-				await createListing(listing);
-				console.log('Listing created successfully');
-			} catch (error) {
-				console.error('Error creating listing:', error);
-			}
+			console.log(formData);
+			console.log(form);
 		});
 	}
 }

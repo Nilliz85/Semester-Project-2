@@ -1,11 +1,16 @@
-import * as storage from "../storage/index.mjs";
+import * as storage from '../storage/index.mjs';
 
-export function logoutListener() {
-  const logoutButton = document.querySelector("#logoutLink");
+/**
+ * @description This function handles the logout process.
+ */
 
-  logoutButton.addEventListener("click", () => {
-    storage.remove("token");
-    storage.remove("profile");
-    location.href = "/";
-  });
+export function logoutHandler() {
+	const logoutButton = document.querySelector('#logoutButton');
+
+	if (logoutButton) {
+		logoutButton.addEventListener('click', async () => {
+			storage.logout();
+			location.href = '/';
+		});
+	}
 }

@@ -1,4 +1,8 @@
-import { getListing, updateListing } from '../api/listings/index.mjs';
+import { getListing, updateListing } from '../listing/index.mjs';
+
+/**
+ * @description This function creates the event listeners for listings updates.
+ */
 
 export async function setUpdateListingListener() {
 	const form = document.querySelector('#editListing');
@@ -7,39 +11,34 @@ export async function setUpdateListingListener() {
 	const id = url.searchParams.get('id');
 
 	if (form) {
-		const button = document.querySelector('button');
+		const button = form.querySelector('button');
 		button.disabled = true;
+
 		const listing = await getListing(id);
+
+		console.log(listing);
 
 		form.title.value = listing.title;
 		form.body.value = listing.body;
-		form.tags.value = listing.tags.join(' ');
-		form.media.value = listing.media;
+		if (listing.tags) {
+			form.tags.value = listing.tags;
+		}
+		if (listing.media) {
+			form.media.value = listing.media;
+		}
 
 		button.disabled = false;
 
-		form.addEventListener('submit', async (event) => {
+		form.addEventListener('submit', (event) => {
 			event.preventDefault();
 			const form = event.target;
 			const formData = new FormData(form);
-			const updatedListing = Object.fromEntries(formData.entries());
-			updatedListing.id = id;
+			const listing = Object.fromEntries(formData.entries());
+			listing.tags = listing.tags.split(',').map((tag) => tag.trim());
+			listing.id = id;
 
-			const tags = formData.get('tags');
-			const tagList = tags.split(' ').map((tag) => tag.trim());
-			updatedListing.tags = tagList;
-
-			try {
-				await updateListing(updatedListing);
-				console.log('Listing updated successfully');
-
-				if (updatedListing.tags) {
-					const listingTags = document.querySelector('#listingTags');
-					listingTags.innerHTML = `Tags: ${updatedListing.tags.join(', ')}`;
-				}
-			} catch (error) {
-				console.error('Error updating listing:', error);
-			}
+			updateListing(listing);
+			location.assign('/profile/');
 		});
 	}
 }

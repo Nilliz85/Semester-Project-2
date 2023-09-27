@@ -1,35 +1,37 @@
-import { getProfile, updateProfile } from "../api/profiles/index.mjs";
+import { getProfile, updateProfile } from '../profiles/index.mjs';
 
-import { load } from "../storage/index.mjs";
+import * as storage from '../storage/index.mjs';
+
+/**
+ * @description This function creates the event listeners that lets the user update their profile.
+ */
 
 export async function setUpdateProfileListener() {
-  const form = document.querySelector("#editProfile");
+	const form = document.querySelector('#editProfile');
 
-  if (form) {
-    const { name, email } = load("profile");
-    form.name.value = name;
-    form.email.value = email;
+	if (form) {
+		const profile = storage.load('profile');
+		console.log(profile);
 
-    const button = document.querySelector("button");
-    button.disabled = true;
+		const { name, email, banner, avatar } = profile;
+		form.name.value = name;
+		form.email.value = email;
 
-    const profile = await getProfile(name);
+		const button = form.querySelector('button');
+		button.disabled = true;
+		form.banner.value = banner;
+		form.avatar.value = avatar;
+		button.disabled = false;
 
-    form.banner.value = profile.banner;
-    form.avatar.value = profile.avatar;
+		form.addEventListener('submit', async (event) => {
+			event.preventDefault();
+			const form = event.target;
+			const formData = new FormData(form);
+			const profile = Object.fromEntries(formData.entries());
+			updateProfile(profile);
 
-    button.disabled = false;
-
-    form.addEventListener("submit", async (event) => {
-      event.preventDefault();
-      const form = event.target;
-      const formData = new FormData(form);
-      const profile = Object.fromEntries(formData.entries());
-
-      profile.name = name;
-      profile.email = email;
-
-      updateProfile(profile);
-    });
-  }
+			const updatedProfile = await getProfile(name);
+			storage.save('profile', updatedProfile);
+		});
+	}
 }
