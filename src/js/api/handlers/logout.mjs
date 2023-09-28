@@ -5,7 +5,7 @@ import * as storage from '../storage/index.mjs';
  */
 
 export function logoutHandler() {
-	const logoutButton = document.querySelector('#logoutButton');
+	const logoutButton = document.querySelector('#logoutLink');
 
 	if (logoutButton) {
 		logoutButton.addEventListener('click', async () => {
