@@ -1,18 +1,4 @@
-/*-------------------- Color Variables --------------------*/
-
-:root {
-	--primary: #521262;
-	--secondary: #761a8d;
-	--dark: #260a37;
-	--white: #fff;
-	--white2: #e6e6e6;
-	--black: #0d0d0d;
-	--grey1: #ccc;
-	--grey2: #828282;
-	--grey3: #333;
-	--orange: #ffa238;
-	--pink: #9a2268;
-}
+import variables from './variables.css';
 
 /*-------------------- Container classes (and some general styling) --------------------*/
 html {
@@ -247,5 +233,5 @@ footer {
 }
 
 .footer-column ul li a:hover {
-	color: var(--pink); /* Change to your preferred link hover color */
+	color: $pink;
 }
