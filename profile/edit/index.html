@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<!--- Title --->
-		<title>Auctionet | Edit Listing</title>
+		<title>Auctionet | Edit Profile</title>
 		<!--- Metadata --->
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -69,37 +69,41 @@
 					<div class="container h-100">
 						<div class="row d-flex justify-content-center align-items-center h-100">
 							<div class="col-12 col-md-9 col-lg-7 col-xl-6">
-								<!-- form  -->
+								<div class="card" style="border-radius: 15px; border: 1px solid #e6e6e6">
+									<div class="card-body p-5">
+										<h2 class="text-uppercase text-center mb-5 box-name">Edit Profile</h2>
+										<form id="editProfile">
+											<div class="form-outline mb-4">
+												<label for="">Name</label>
+												<input class="form-control" type="text" name="name" disabled />
+											</div>
+											<div class="form-outline mb-4">
+												<label for="">Email</label>
+												<input class="form-control" type="email" name="email" disabled />
+											</div>
 
-								<form id="editProfile">
-									<div class="form-outline mb-4">
-										<label for="">Name</label>
-										<input class="form-control" type="text" name="name" disabled />
-									</div>
-									<div class="form-outline mb-4">
-										<label for="">Email</label>
-										<input class="form-control" type="email" name="email" disabled />
-									</div>
+											<div class="form-outline mb-4">
+												<label for="">Banner</label>
+												<input class="form-control" type="url" name="banner" />
+											</div>
 
-									<div class="form-outline mb-4">
-										<label for="">Banner</label>
-										<input class="form-control" type="url" name="banner" />
+											<div class="form-outline mb-4">
+												<label for="">Avatar</label>
+												<input class="form-control" type="url" name="avatar" />
+											</div>
+											<div class="d-flex justify-content-center">
+												<button type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Update Profile</button>
+											</div>
+										</form>
 									</div>
-
-									<div class="form-outline mb-4">
-										<label for="">Avatar</label>
-										<input class="form-control" type="url" name="avatar" />
-									</div>
-									<div class="d-flex justify-content-center">
-										<button type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Update Profile</button>
-									</div>
-								</form>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</section>
 		</main>
+
 		<footer class="text-center text-white">
 			<div class="container p-5"></div>
 			<div class="text-center p-5">
