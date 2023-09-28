@@ -1,4 +1,4 @@
-import { getListing, updateListing } from '../listing/index.mjs';
+import { getListing, updateListing } from '../listings/index.mjs';
 
 /**
  * @description This function creates the event listeners for listings updates.

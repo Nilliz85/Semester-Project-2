@@ -60,7 +60,7 @@ export function listingTemplateB(listingData) {
 	const buttonContainer = document.createElement('div');
 	buttonContainer.classList.add('d-flex');
 	const editButtonLink = document.createElement('a');
-	editButtonLink.href = `/listing/edit/?id=${listingData.id}`;
+	editButtonLink.href = `/listings/edit/?id=${listingData.id}`;
 	const editButton = document.createElement('button');
 	editButton.classList.add('btn');
 	editButton.classList.add('btn-primary');

@@ -1,4 +1,4 @@
-import { createBid } from '../listing/index.mjs';
+import { createBid } from '../listings/index.mjs';
 import * as templates from '../templates/index.mjs';
 
 /**
