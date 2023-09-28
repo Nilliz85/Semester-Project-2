@@ -1,11 +1,5 @@
-@import "variables";
+@import 'variables';
 
 .box-header {
-  color: var(--secondary-light);
-}
-
-main .btn {
-  background-color: var(--secondary);
-  border-color: var(--secondary-light);
-  color: var(--secondary-light);
+	color: $secondary-light;
 }
