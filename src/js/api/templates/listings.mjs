@@ -11,7 +11,7 @@
 
 export function listingTemplateB(listingData) {
 	const listingLink = document.createElement('a');
-	listingLink.href = `/listing/?id=${listingData.id}`;
+	listingLink.href = `/listings/?id=${listingData.id}`;
 	const listing = document.createElement('div');
 	listingLink.append(listing);
 	listingLink.classList.add('col-md-4');

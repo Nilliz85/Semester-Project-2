@@ -23,7 +23,7 @@ export function setLoginFormListener() {
 				const { accessToken, ...user } = await login(profile);
 				storage.save('token', accessToken);
 				storage.save('profile', user);
-				location.href = '/feed/';
+				location.href = '/listings/';
 			} catch (error) {
 				console.log(error);
 			} finally {

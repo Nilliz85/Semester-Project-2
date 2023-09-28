@@ -1,4 +1,4 @@
-import * as listingMethods from '../js/api/listing/index.mjs';
+import * as listingMethods from '../js/api/listings/index.mjs';
 import * as templates from '../js/api/templates/index.mjs';
 import * as listeners from '../js/api/handlers/index.mjs';
 
@@ -16,9 +16,9 @@ if (path === '/profile/login/') {
 	listeners.setLoginFormListener();
 } else if (path === '/profile/register/') {
 	listeners.setRegisterFormListener();
-} else if (path === '/listing/create/') {
+} else if (path === '/listings/create/') {
 	listeners.setCreateListingListener();
-} else if (path === '/listing/edit/') {
+} else if (path === '/listings/edit/') {
 	listeners.setUpdateListingListener();
 } else if (path === '/profile/edit/') {
 	listeners.setUpdateProfileListener();
@@ -31,7 +31,7 @@ if (path === '/profile/login/') {
 	}
 	testTemplate();
 	listeners.setSearchAndFilterListener();
-} else if (path === '/listing/') {
+} else if (path === '/listings/') {
 	const params = new URLSearchParams(window.location.search);
 	const id = params.get('id');
 	const listing = await listingMethods.getListing(id);
