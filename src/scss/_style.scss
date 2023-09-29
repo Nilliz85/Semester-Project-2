@@ -9,6 +9,34 @@ nav {
 	color: black;
 }
 
+.tags,
+.tag {
+	font-style: italic;
+	color: #696969;
+}
+
+.load-more {
+	text-align: center;
+	margin: auto;
+	margin-top: 50px;
+	margin-bottom: 100px;
+	max-width: 200px;
+	padding: 10px;
+}
+
+.hover-grow {
+	transform: scale(1);
+	transition: transform 0.3s ease;
+}
+.hover-grow:hover {
+	transform: scale(1.1);
+}
+
+.bi {
+	width: 30px;
+	height: 30px;
+}
+
 footer {
 	background: linear-gradient(to top, #0f3151 0%, #265e8a 20%, #fff 100%);
 	.footer-nav {
