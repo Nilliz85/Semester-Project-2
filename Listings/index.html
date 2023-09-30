@@ -10,7 +10,7 @@
 		<meta name="description" content="This is an assignment for a class in my frontend developer course on Noroff" />
 		<meta name="keywords" content="web design, graphic design, UI/UX design, school assignment, auction, Noroff" />
 		<!--- favicon --->
-		<link rel="shortcut icon" type="image/png" href="./assets/favicon/favicon-512x512.png" />
+		<link rel="shortcut icon" type="image/png" href="../assets/favicon/favicon-512x512.png" />
 		<!--- JS modules --->
 		<script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
 		<script type="module" src="/src/js/index.mjs" defer></script>
@@ -68,31 +68,31 @@
 				<div class="post row p-5">
 					<div class="justify-content-center">
 						<a href="/listing/create/" class="btn btn-success ms-2 my-2 mr-sm-2 text-light">Create a listing</a>
-						<form id="sortListingsForm" class="form-inline d-flex outline-success ms-2 mt-3">
-							<select class="form-select w-50" name="sortType" id="sortType">
-								<option value="desc">Newest</option>
-								<option value="asc">Oldest</option>
-							</select>
-							<button type="submit" class="btn btn-success">Sort</button>
-						</form>
-						<div class="">
-							<form class="form-inline ms-2 my-2 my-lg-0 d-flex align-items-center w-50" id="filterByTagForm">
-								<input class="form-control mr-sm-2 flex-grow-1" type="text" placeholder="Search for tag in posts" aria-label="Search" id="filterByTag" name="filterByTag" pattern="^[A-Za-z0-9]*$" />
-								<button class="btn btn-success my-2 mr-sm-2" type="submit">Search</button>
+						<div class="d-flex flex-column align-items-center">
+							<form id="filterByTagForm" class="form-inline d-flex justify-content-between w-50 mt-2">
+								<input class="form-control flex-grow-1 me-2" type="text" placeholder="Search for tag in posts" aria-label="Search" id="filterByTag" name="filterByTag" pattern="^[A-Za-z0-9]*$" />
+								<button class="btn btn-success" style="width: 75px" type="submit">Search</button>
+							</form>
+							<form id="sortListingsForm" class="form-inline d-flex justify-content-between w-50 mt-2">
+								<select class="form-select flex-grow-1 me-2" name="sortType" id="sortType">
+									<option value="desc">Newest</option>
+									<option value="asc">Oldest</option>
+								</select>
+								<button type="submit" class="btn btn-success ps-4 pe-4" style="width: 75px">Sort</button>
 							</form>
 						</div>
 					</div>
-					<div class="bg-dark" id="listing container">
-						<div class="column col-sm" id="listings"></div>
-					</div>
+				</div>
+				<div id="listing container">
+					<div class="column col-sm justify-content-center" id="listings"></div>
 				</div>
 			</div>
 		</main>
-		<footer class="text-center text-white fixed-bottom">
+		<footer class="text-center text-white">
 			<div class="container p-5"></div>
 			<div class="text-center p-5">
 				<ul class="footer-nav">
-					<li><a href="./feed/index.html">Home</a></li>
+					<li><a href="#">Home</a></li>
 					<li><a href="./about/index.html">About</a></li>
 					<li><a href="https://www.noroff.no/en">Noroff</a></li>
 				</ul>
