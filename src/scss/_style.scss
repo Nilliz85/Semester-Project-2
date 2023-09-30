@@ -6,13 +6,13 @@ nav {
 }
 
 .navbar-nav .nav-link {
-	color: black;
+	color: $text-dark;
 }
 
 .tags,
 .tag {
 	font-style: italic;
-	color: #696969;
+	color: $text-gray;
 }
 
 .load-more {
@@ -22,6 +22,7 @@ nav {
 	margin-bottom: 100px;
 	max-width: 200px;
 	padding: 10px;
+	border: 1px solid $border-color;
 }
 
 .hover-grow {
@@ -38,18 +39,18 @@ nav {
 }
 
 footer {
-	background: linear-gradient(to top, #0f3151 0%, #265e8a 20%, #fff 100%);
+	background: linear-gradient(to top, #0f3151 0%, #265e8a 20%, $primary-light 100%);
 	.footer-nav {
 		display: flex;
 		justify-content: center;
 		gap: 2rem;
 		list-style: none;
 		padding: 2rem 0;
-		color: #fff;
+		color: $primary-light;
 		font-size: 1.6rem;
 		a,
 		a:visited {
-			color: #fff;
+			color: $primary-light;
 			text-decoration: none;
 		}
 	}
