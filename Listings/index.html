@@ -68,32 +68,23 @@
 				<div class="post row p-5">
 					<div class="justify-content-center">
 						<a href="/listing/create/" class="btn btn-success ms-2 my-2 mr-sm-2 text-light">Create a listing</a>
-						<form id="sortListingsForm" class="justify-content-center form-inline d-flex outline-success ms-2 mt-3" style="max-width: 500px">
-							<select class="form-select w-50" name="sortType" id="sortType">
-								<option value="desc">Newest</option>
-								<option value="asc">Oldest</option>
-							</select>
-							<button type="submit" class="btn btn-success ms-5">Sort</button>
-						</form>
-						<div class="">
-							<form id="filterByTagForm" class="form-inline ms-2 my-2 my-lg-0 d-flex align-items-center w-50">
-								<input
-									style="max-width: 300px"
-									class="form-control mr-sm-2 flex-grow-1"
-									type="text"
-									placeholder="Search for tag in posts"
-									aria-label="Search"
-									id="filterByTag"
-									name="filterByTag"
-									pattern="^[A-Za-z0-9]*$"
-								/>
-								<button class="btn btn-success my-2 mr-sm-2 ms-5" type="submit">Search</button>
+						<div class="d-flex flex-column align-items-center">
+							<form id="filterByTagForm" class="form-inline d-flex justify-content-between w-50 mt-2">
+								<input class="form-control flex-grow-1 me-2" type="text" placeholder="Search for tag in posts" aria-label="Search" id="filterByTag" name="filterByTag" pattern="^[A-Za-z0-9]*$" />
+								<button class="btn btn-success" style="width: 75px" type="submit">Search</button>
+							</form>
+							<form id="sortListingsForm" class="form-inline d-flex justify-content-between w-50 mt-2">
+								<select class="form-select flex-grow-1 me-2" name="sortType" id="sortType">
+									<option value="desc">Newest</option>
+									<option value="asc">Oldest</option>
+								</select>
+								<button type="submit" class="btn btn-success ps-4 pe-4" style="width: 75px">Sort</button>
 							</form>
 						</div>
 					</div>
-					<div id="listing container">
-						<div class="column col-sm justify-content-center" id="listings"></div>
-					</div>
+				</div>
+				<div id="listing container">
+					<div class="column col-sm justify-content-center" id="listings"></div>
 				</div>
 			</div>
 		</main>
