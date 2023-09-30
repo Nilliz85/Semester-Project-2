@@ -80,6 +80,8 @@ export function listingTemplateB(listingData) {
 
 let currentPage = 1;
 const itemsPerPage = 15;
+let currentTag = '';
+let currentSortType = '';
 
 export function renderListingTemplates(listingDataList, parent) {
 	const start = (currentPage - 1) * itemsPerPage;
@@ -122,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			currentPage++;
 		}
 
-		getListings().then((data) => {
+		getListings(currentTag, currentSortType).then((data) => {
 			renderListingTemplates(data, parentElement);
 			updateButtonState();
 		});
@@ -130,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	parentElement.after(loadMoreButton);
 
-	getListings().then((data) => {
+	getListings(currentTag, currentSortType).then((data) => {
 		renderListingTemplates(data, parentElement);
 		updateButtonState();
 	});
