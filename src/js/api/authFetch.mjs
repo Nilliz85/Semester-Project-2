@@ -1,4 +1,4 @@
-import { load } from './storage/index.mjs';
+import * as storage from './storage/index.mjs';
 
 /**
  * Retrieve an authenticated request headers object or make an authenticated request to the API.
@@ -10,7 +10,7 @@ import { load } from './storage/index.mjs';
  */
 
 export function headers() {
-	const token = load('token');
+	const token = storage.getToken();
 	return {
 		'Content-Type': 'application/json',
 		Authorization: `Bearer ${token}`,

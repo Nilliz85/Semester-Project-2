@@ -9,14 +9,12 @@ export async function setViewProfileListener() {
 	const profile = storage.load('profile');
 	console.log(profile);
 	const profileData = await profileMethods.getProfile(profile.name);
-	const listingsContainer = document.querySelector('#listings');
+	const listingsContainer = document.querySelector('#profile-listings');
 	const profileTitle = document.querySelector('#profileName');
 	const profileDetails = document.querySelector('#profileDetails');
 	const profileCredits = document.querySelector('#profileCredits');
-	console.log(listingsContainer);
 	profileTitle.innerHTML = profileData.name;
 	templates.renderProfileListingsTemplates(profileData.listings, listingsContainer);
 	profileTitle.innerHTML = profileData.name;
 	profileCredits.innerHTML = profileData.credits;
-	console.log(profileData);
 }

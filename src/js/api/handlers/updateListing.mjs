@@ -16,8 +16,6 @@ export async function setUpdateListingListener() {
 
 		const listing = await getListing(id);
 
-		console.log(listing);
-
 		form.title.value = listing.title;
 		form.body.value = listing.body;
 		if (listing.tags) {

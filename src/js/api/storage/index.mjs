@@ -40,3 +40,14 @@ export function logout() {
 	remove('token');
 	remove('profile');
 }
+
+export function getToken() {
+	const token = localStorage.getItem('token');
+	return JSON.parse(token);
+}
+
+export function getCredits() {
+	const profile = getProfile();
+	const credits = profile.credits;
+	return JSON.parse(credits);
+}

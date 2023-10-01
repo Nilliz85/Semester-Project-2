@@ -19,9 +19,6 @@ export function setCreateListingListener() {
 			listing.tags = [listing.tags];
 			listing.media = [listing.media];
 			createListing(listing);
-			console.log(listing);
-			console.log(formData);
-			console.log(form);
 		});
 	}
 }

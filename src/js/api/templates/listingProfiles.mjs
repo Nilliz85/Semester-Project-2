@@ -16,14 +16,7 @@ export function listingTemplateB(listingData) {
 	const listing = document.createElement('div');
 
 	listing.id = listingData.id;
-	listing.classList.add('col-md-4');
-	listing.classList.add('listing');
-	listing.classList.add('border');
-	listing.classList.add('w-25');
-	listing.classList.add('mh-25');
-	listing.classList.add('m-4');
-	listing.classList.add('text-decoration-none');
-	listing.classList.add('text-light');
+	listing.classList.add('col-md-4', 'listing', 'border', 'w-25', 'mh-25', 'm-4', 'text-decoration-none', 'text-body');
 	const listingTitle = document.createElement('h2');
 	listingTitle.innerText = listingData.title;
 	listing.append(listingTitle);
@@ -36,22 +29,18 @@ export function listingTemplateB(listingData) {
 		const img = document.createElement('img');
 		img.src = listingData.media;
 		img.alt = `Image from ${listingData.title}`;
-		img.classList.add('mt-5');
-		img.classList.add('mb-2');
-		img.classList.add('img-fluid');
+		img.classList.add('mt-5', 'mb-2', 'img-fluid');
 		listing.append(img);
 	}
 
 	if (listingData.tags.length > 0) {
 		const tags = document.createElement('div');
-		tags.classList.add('tags');
-		tags.classList.add('d-flex');
+		tags.classList.add('tags', 'd-flex');
 		tags.innerHTML = "<p class= 'pe-2'>Tags: </p>";
 		listingData.tags.forEach((tag) => {
 			const tagElement = document.createElement('p');
-			tagElement.classList.add('tag');
+			tagElement.classList.add('tag', 'pe-2');
 			tagElement.innerText = `${tag}, `;
-			tagElement.classList.add('pe-2');
 			tags.append(tagElement);
 		});
 		listing.append(tags);
@@ -62,14 +51,11 @@ export function listingTemplateB(listingData) {
 	const editButtonLink = document.createElement('a');
 	editButtonLink.href = `/listings/edit/?id=${listingData.id}`;
 	const editButton = document.createElement('button');
-	editButton.classList.add('btn');
-	editButton.classList.add('btn-primary');
+	editButton.classList.add('btn', 'btn-primary');
 	editButton.innerHTML = 'Edit';
 	const deleteButton = document.createElement('button');
-	deleteButton.classList.add('btn');
-	deleteButton.classList.add('delete-button');
+	deleteButton.classList.add('btn', 'btn-danger', 'delete-button');
 	deleteButton.innerHTML = 'Delete';
-	deleteButton.classList.add('btn-danger');
 	buttonContainer.append(deleteButton);
 	editButtonLink.append(editButton);
 	buttonContainer.append(editButtonLink);
