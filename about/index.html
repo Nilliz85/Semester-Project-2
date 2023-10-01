@@ -20,17 +20,53 @@
 			<nav class="navbar navbar-expand-lg">
 				<div class="container-fluid">
 					<a class="navbar-brand text-primary" href="./home.html">Auctionet</a>
+					<button
+						class="navbar-toggler"
+						type="button"
+						data-bs-toggle="collapse"
+						data-bs-target="#navbarSupportedContent"
+						aria-controls="navbarSupportedContent"
+						aria-expanded="false"
+						aria-label="Toggle navigation"
+					>
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+							<li class="nav-item">
+								<a class="nav-link" aria-current="page" href="../listings/">Home</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" style="text-decoration: underline" href="#">Profile</a>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Navigation </a>
+								<ul class="dropdown-menu">
+									<li><a class="dropdown-item" href="about.html">About</a></li>
+									<li><a class="dropdown-item" href="../listings/">Listings</a></li>
+									<li><a class="dropdown-item" href="../listing/create/">Create Listing</a></li>
+									<li><a class="dropdown-item" href="./edit/">Edit Profile</a></li>
+									<li><hr class="dropdown-divider" /></li>
+									<li><a id="logoutLink" class="dropdown-item" href="/">Log out</a></li>
+								</ul>
+							</li>
+						</ul>
+						<form class="d-flex" role="search">
+							<input class="form-control me-3" type="search" placeholder="Search" aria-label="Search" />
+							<button class="btn btn-outline-primary me-5" type="submit">Search</button>
+						</form>
+					</div>
 				</div>
 			</nav>
 		</header>
 
-		<main>
+		<main class="justify-content-center">
 			<section class="vh-100">
 				<div class="mask d-flex align-items-center h-100 gradient-custom-3">
 					<div class="container h-100">
 						<div class="row d-flex justify-content-center align-items-center h-100">
 							<div class="col-12 col-md-9 col-lg-7 col-xl-6">
-								<div class="card" style="border-radius: 15px">
+								<div class="card mx-auto" style="border-radius: 15px">
 									<div class="card-body p-5">
 										<h2 class="text-uppercase text-center mb-5">About</h2>
 										<p>
@@ -60,7 +96,7 @@
 			<div class="container p-5"></div>
 			<div class="text-center p-5">
 				<ul class="footer-nav">
-					<li><a href="../index.html">Home</a></li>
+					<li><a href="../listings/index.html">Home</a></li>
 					<li><a href="#">About</a></li>
 					<li><a href="https://www.noroff.no/en">Noroff</a></li>
 				</ul>

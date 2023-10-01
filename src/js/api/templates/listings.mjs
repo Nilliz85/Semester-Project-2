@@ -79,19 +79,16 @@ export function listingTemplateB(listingData) {
 	return listingLink;
 }
 
-// Add this event listener to capture clicks on the listing links
 document.addEventListener('DOMContentLoaded', () => {
-	const listingsContainer = document.getElementById('listings'); // Assuming you have a container element with the ID 'listings'
+	const listingsContainer = document.getElementById('listings');
+	('listings');
 	listingsContainer.addEventListener('click', (event) => {
-		// Check if a listing link was clicked
 		if (event.target.classList.contains('listing-link')) {
 			event.preventDefault();
 			const href = event.target.getAttribute('href');
 			const urlParams = new URLSearchParams(href);
 			const listingId = urlParams.get('id');
-			console.log('Listing ID:', listingId);
-			// Now you have the 'listingId', you can use it to navigate to the individual listing page
-			window.location.href = `/listings/?id=${listingId}`; // Replace with the actual URL
+			window.location.href = `/listings/?id=${listingId}`;
 		}
 	});
 });

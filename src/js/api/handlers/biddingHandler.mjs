@@ -10,7 +10,6 @@ import * as templates from '../templates/index.mjs';
  */
 
 export function setBiddingListener() {
-	console.log('test');
 	const bid = document.querySelector('#biddingButton');
 	const bidInput = document.querySelector('#bidInput');
 	const params = new URLSearchParams(window.location.search);
@@ -21,10 +20,20 @@ export function setBiddingListener() {
 			event.preventDefault();
 
 			const amount = bidInput.value;
-			console.log(1);
 			const returnTheListing = await createBid(id, amount);
-			const container = document.querySelector('#listing');
-			console.log(returnTheListing);
+
+			const container = document.querySelector('#bidList');
+			const newBidDiv = document.createElement('div');
+			newBidDiv.classList.add('justify-content-center', 'mx-auto', 'd-flex', 'w-75', 'border', 'border-1', 'border-$border-color', 'rounded', 'p-2', 'm-2');
+
+			const newBidText = document.createElement('p');
+			newBidText.classList.add('bidding-text', 'mx-auto');
+			newBidText.innerHTML = `Bid: ${amount}&nbsp;&nbsp;&nbsp;&nbsp; `;
+			newBidText.innerHTML += `By: &nbsp;<i>${returnTheListing.bids[returnTheListing.bids.length - 1].bidderName}</i>`;
+
+			newBidDiv.append(newBidText);
+			container.append(newBidDiv);
+
 			window.location.reload();
 		});
 	}

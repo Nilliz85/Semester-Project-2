@@ -25,7 +25,6 @@ if (path === '/profile/login/') {
 } else if (path === '/listings/') {
 	async function testTemplate() {
 		const listings = await listingMethods.getListings();
-		console.log({ listings });
 		const container = document.querySelector('#listings');
 		templates.renderListingTemplates(listings, container);
 	}

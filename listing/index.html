@@ -37,17 +37,19 @@
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
 						<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 							<li class="nav-item">
-								<a class="nav-link active" aria-current="page" href="#">Home</a>
+								<a class="nav-link active" style="text-decoration: underline" aria-current="page" href="#">Home</a>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link" href="../profile/">Profile</a>
 							</li>
 							<li class="nav-item dropdown">
-								<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Dropdown </a>
+								<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Navigation </a>
 								<ul class="dropdown-menu">
-									<li><a class="dropdown-item" href="../about/">About</a></li>
-									<li><a class="dropdown-item disabled" href="#">Listings</a></li>
+									<li><a class="dropdown-item" href="../listings/">Listings</a></li>
+									<li><a class="dropdown-item" href="../listing/create/">Create Listing</a></li>
+									<li><a class="dropdown-item" href="../listing/edit/">Edit Listing</a></li>
 									<li><a class="dropdown-item" href="../profile/">Profile</a></li>
+									<li><a class="dropdown-item" href="../about/">About</a></li>
 									<li><hr class="dropdown-divider" /></li>
 									<li><a id="logoutLink" class="dropdown-item" href="/">Log out</a></li>
 								</ul>
@@ -62,18 +64,9 @@
 			</nav>
 		</header>
 
-		<main>
-			<section class="vh-100">
-				<div class="mask d-flex align-items-center h-100 gradient-custom-3">
-					<div class="listing">
-						<div class="container h-100" id="listing-details">
-							<!-- Elements to display listing details will go here -->
-							<h1 id="listing-title"></h1>
-							<p id="listing-description"></p>
-							<!-- Add more elements for other details as needed -->
-						</div>
-					</div>
-				</div>
+		<main class="justify-content-center h-100">
+			<section class="listing-section">
+				<div class="container-fluid justify-content-center" id="listing"></div>
 			</section>
 		</main>
 		<footer class="text-center text-white">

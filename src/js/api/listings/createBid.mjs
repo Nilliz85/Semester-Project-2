@@ -11,6 +11,7 @@ const method = 'post';
  */
 
 export async function createBid(id, amount) {
+	console.log(id, amount);
 	const createListingURL = API_AUCTION_URL + action + id + '/bids';
 	const response = await authFetch(createListingURL, {
 		method,

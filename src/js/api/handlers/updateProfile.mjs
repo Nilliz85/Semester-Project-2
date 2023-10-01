@@ -11,7 +11,6 @@ export async function setUpdateProfileListener() {
 
 	if (form) {
 		const profile = storage.load('profile');
-		console.log(profile);
 
 		const { name, email, banner, avatar } = profile;
 		form.name.value = name;

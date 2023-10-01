@@ -15,6 +15,10 @@ nav {
 	color: $text-gray;
 }
 
+.listing {
+	margin: auto;
+}
+
 .create-btn-container {
 	display: flex;
 	justify-content: center;
@@ -64,4 +68,66 @@ footer {
 			text-decoration: none;
 		}
 	}
+}
+
+//-----//
+body {
+	background-color: #545454;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 300;
+}
+
+.profile-container {
+	display: flex;
+	flex-direction: column;
+	min-height: 60vh;
+}
+
+.card {
+	flex: 1;
+	width: 400px;
+	border: none;
+	border-radius: 15px;
+	padding: 8px;
+	background-color: #fff;
+	position: relative;
+	height: 370px;
+}
+
+.upper {
+	height: 150px;
+}
+
+.upper img {
+	width: 100%;
+	height: 100%;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+.user {
+	position: relative;
+}
+
+.profile img {
+	height: 80px;
+	width: 80px;
+	margin-top: 2px;
+}
+
+.profile {
+	position: absolute;
+	top: -50px;
+	left: 38%;
+	height: 90px;
+	width: 90px;
+	border: 3px solid #fff;
+	border-radius: 50%;
+}
+
+.credits {
+	margin-bottom: 30px;
+}
+.credits span {
+	font-size: 29px;
 }
