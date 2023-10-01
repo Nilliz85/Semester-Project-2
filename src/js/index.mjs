@@ -22,7 +22,7 @@ if (path === '/profile/login/') {
 	listeners.setUpdateListingListener();
 } else if (path === '/profile/edit/') {
 	listeners.setUpdateProfileListener();
-} else if (path === '/feed/') {
+} else if (path === '/listings/') {
 	async function testTemplate() {
 		const listings = await listingMethods.getListings();
 		console.log({ listings });
@@ -31,7 +31,7 @@ if (path === '/profile/login/') {
 	}
 	testTemplate();
 	listeners.setSearchAndFilterListener();
-} else if (path === '/listings/') {
+} else if (path === '/listing/') {
 	const params = new URLSearchParams(window.location.search);
 	const id = params.get('id');
 	const listing = await listingMethods.getListing(id);

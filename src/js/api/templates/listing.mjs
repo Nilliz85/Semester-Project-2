@@ -13,6 +13,7 @@ export function listingTemplateC(listingData) {
 	const listing = document.createElement('div');
 	listing.classList.add('col-md-4', 'listing', 'border', 'w-25', 'mh-25', 'm-4', 'text-body');
 	listing.innerText = listingData.title;
+	console.log('hello');
 
 	const listingBody = document.createElement('p');
 	listingBody.innerText = listingData.description;
