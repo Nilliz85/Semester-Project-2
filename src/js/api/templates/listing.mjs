@@ -11,12 +11,7 @@
 
 export function listingTemplateC(listingData) {
 	const listing = document.createElement('div');
-	listing.classList.add('col-md-4');
-	listing.classList.add('listing');
-	listing.classList.add('border');
-	listing.classList.add('w-25');
-	listing.classList.add('mh-25');
-	listing.classList.add('m-4');
+	listing.classList.add('col-md-4', 'listing', 'border', 'w-25', 'mh-25', 'm-4', 'text-body');
 	listing.innerText = listingData.title;
 
 	const listingBody = document.createElement('p');
@@ -27,21 +22,18 @@ export function listingTemplateC(listingData) {
 		const img = document.createElement('img');
 		img.src = listingData.media;
 		img.alt = `Image from ${listingData.title}`;
-		img.classList.add('mt-5');
-		img.classList.add('img-fluid');
+		img.classList.add('mt-5', 'img-fluid');
 		listing.append(img);
 	}
 
 	if (listingData.tags.length > 0) {
 		const tags = document.createElement('div');
-		tags.classList.add('tags');
-		tags.classList.add('d-flex');
+		tags.classList.add('tags', 'd-flex');
 		tags.innerHTML = "<p class= 'pe-2'>Tags: </p>";
 		listingData.tags.forEach((tag) => {
 			const tagElement = document.createElement('p');
-			tagElement.classList.add('tag');
+			tagElement.classList.add('tag', 'pe-2');
 			tagElement.innerText = `${tag}, `;
-			tagElement.classList.add('pe-2');
 			tags.append(tagElement);
 		});
 		listing.append(tags);
@@ -61,6 +53,12 @@ export function listingTemplateC(listingData) {
 }
 
 export function renderOneListingTemplate(listingData, parent) {
-	parent.append(listingTemplateC(listingData));
-	console.log(listingData, parent);
+	const listingElement = listingTemplateC(listingData);
+	parent.append(listingElement);
+
+	// Add a click event listener to the listing element
+	listingElement.addEventListener('click', () => {
+		// Navigate to the detailed listing page with the listing ID
+		window.location.href = `/listing/?id=${listingData.id}`;
+	});
 }

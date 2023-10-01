@@ -15,6 +15,16 @@ nav {
 	color: $text-gray;
 }
 
+.create-btn-container {
+	display: flex;
+	justify-content: center;
+	margin: auto;
+}
+
+.create-btn {
+	margin-bottom: 20px;
+}
+
 .load-more {
 	text-align: center;
 	margin: auto;

@@ -1,4 +1,5 @@
 import { API_AUCTION_URL } from '../../api/constants.mjs';
+// import { LISTINGS_API_URL } from '../../api/constants.mjs';
 import { authFetch } from '../authFetch.mjs';
 
 const action = '/listings';

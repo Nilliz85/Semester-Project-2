@@ -15,10 +15,11 @@ const parentElement = document.getElementById('listings');
 
 export function listingTemplateB(listingData) {
 	const listingLink = document.createElement('a');
-	listingLink.href = `/listings/?id=${listingData.id}`;
+	listingLink.href = `/listing/?id=${listingData.id}`;
 	const listing = document.createElement('div');
 	listingLink.append(listing);
 	listingLink.classList.add('col-md-4', 'listing', 'border', 'w-25', 'mh-25', 'm-4', 'text-decoration-none', 'text-body');
+
 	const listingTitle = document.createElement('h2');
 	listingTitle.innerText = listingData.title;
 	listingTitle.classList.add('text-center', 'p-3');
@@ -77,6 +78,23 @@ export function listingTemplateB(listingData) {
 
 	return listingLink;
 }
+
+// Add this event listener to capture clicks on the listing links
+document.addEventListener('DOMContentLoaded', () => {
+	const listingsContainer = document.getElementById('listings'); // Assuming you have a container element with the ID 'listings'
+	listingsContainer.addEventListener('click', (event) => {
+		// Check if a listing link was clicked
+		if (event.target.classList.contains('listing-link')) {
+			event.preventDefault();
+			const href = event.target.getAttribute('href');
+			const urlParams = new URLSearchParams(href);
+			const listingId = urlParams.get('id');
+			console.log('Listing ID:', listingId);
+			// Now you have the 'listingId', you can use it to navigate to the individual listing page
+			window.location.href = `/listings/?id=${listingId}`; // Replace with the actual URL
+		}
+	});
+});
 
 let currentPage = 1;
 const itemsPerPage = 15;
